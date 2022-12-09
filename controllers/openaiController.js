@@ -9,9 +9,9 @@ const openai = new OpenAIApi(configuration);
 const generateImage = async (req, res) => {
     try {
         const response = await openai.createImage({
-            prompt: 'Russian bear on rocket',
+            prompt: 'Russian shiba dog',
             n: 1,
-            size: '521x512'
+            size: '512x512'
         });
         const imageUrl = response.data.data[0].url;
 
@@ -20,6 +20,13 @@ const generateImage = async (req, res) => {
             data: imageUrl,
         })
     } catch (error) {
+        if (error.response) {
+            console.log(error.response.status)
+            console.log(error.response.data)
+        } else {
+            console.log(error.message)
+        }
+
         res.status(400).json({
             success: false,
             error: 'The image could not be generated.'
