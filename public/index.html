@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/spinner.css" />
-    <script src="./js/main.js"></script>
 </head>
 
 <body class="bg-light">
@@ -33,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-12 order-md-1">
                         <h4 class="mb-3">Criterias</h4>
-                        <form class="needs-validation" novalidate="">
+                        <form id="image-form" class="needs-validation" novalidate="">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="prompt">Prompt</label>
@@ -95,7 +94,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card mb-4 box-shadow">
+                        <div class="image-container card mb-4 box-shadow">
+                            <h2 class="msg"></h2>
                             <img src="" alt="" id="image" />
                             <!-- <img class="card-img-top"
                                 data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
@@ -108,6 +108,8 @@
             </div>
         </div>
     </section>
+
+    <div class="spinner show"></div>
 
     <section class="text-center">
         <div class="footer py-5 bg-light">
@@ -141,26 +143,29 @@
     <script src="../../assets/js/vendor/holder.min.js"></script>
     <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
-            (function () {
-                'use strict';
+            // (function () {
+            //     'use strict';
 
-                window.addEventListener('load', function () {
-                    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                    var forms = document.getElementsByClassName('needs-validation');
+            //     window.addEventListener('load', function () {
+            //         // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            //         var forms = document.getElementsByClassName('needs-validation');
 
-                    // Loop over them and prevent submission
-                    var validation = Array.prototype.filter.call(forms, function (form) {
-                        form.addEventListener('submit', function (event) {
-                            if (form.checkValidity() === false) {
-                                event.preventDefault();
-                                event.stopPropagation();
-                            }
-                            form.classList.add('was-validated');
-                        }, false);
-                    });
-                }, false);
-            })();
+            //         // Loop over them and prevent submission
+            //         var validation = Array.prototype.filter.call(forms, function (form) {
+            //             form.addEventListener('submit', function (event) {
+            //                 if (form.checkValidity() === false) {
+            //                     event.preventDefault();
+            //                     event.stopPropagation();
+            //                 }
+            //                 form.classList.add('was-validated');
+            //             }, false);
+            //         });
+            //     }, false);
+            // })();
     </script>
+
+    <script src="./js/main.js"></script>
+
 
 
 </body>
